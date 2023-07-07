@@ -20,7 +20,12 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
     metadata {
       name    = var.cluster_name       # Should be same as your cluster name
       region  = var.availability_zones # AWS region
-      version = "1.22"                 # Cluster k8s version
+      version = "1.26"                 # Cluster k8s version
+      tags = {
+          "demo" = "true"
+          "email" = "abhinav@rafay.co"
+          "env" = "cs-team"
+              }
     }
     vpc {
       cluster_endpoints {
@@ -31,18 +36,21 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
     managed_nodegroups {
       name               = "managed-ng-1" # Node Group name
       ami_family         = "AmazonLinux2"
-      instance_type      = "t3.2xlarge" # AWS instance type
+      instance_type      = "t3.xlarge" # AWS instance type
       desired_capacity   = 1
       min_size           = 1
       max_size           = 2
       max_pods_per_node  = 50
-      version            = "1.22"
+      version            = "1.26"
       volume_size        = 80
       volume_type        = "gp3"
       volume_iops        = 3000
       volume_throughput  = 125
       private_networking = true
-
+      tags = {
+        "email" = "abhinav@rafay.co"
+        "env" = "cs-team"
+      }
     }
     # node_groups {
     #   name       = "ng-1"
