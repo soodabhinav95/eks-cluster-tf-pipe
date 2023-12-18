@@ -20,7 +20,7 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
     metadata {
       name    = var.cluster_name       # Should be same as your cluster name
       region  = var.availability_zones # AWS region
-      version = "1.26"                 # Cluster k8s version
+      version = "1.28"                 # Cluster k8s version
       tags = {
           "demo" = "true"
           "email" = "abhinav@rafay.co"
@@ -41,7 +41,7 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
       min_size           = 1
       max_size           = 2
       max_pods_per_node  = 50
-      version            = "1.26"
+      version            = "1.28"
       volume_size        = 80
       volume_type        = "gp3"
       volume_iops        = 3000
