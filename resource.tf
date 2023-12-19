@@ -22,10 +22,10 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
       region  = var.availability_zones # AWS region
       version = "1.26"                 # Cluster k8s version
       tags = {
-          "demo" = "true"
-          "email" = "abhinav@rafay.co"
-          "env" = "cs-team"
-              }
+        "demo"  = "true"
+        "email" = "abhinav@rafay.co"
+        "env"   = "cs-team"
+      }
     }
     vpc {
       cluster_endpoints {
@@ -49,7 +49,12 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
       private_networking = true
       tags = {
         "email" = "abhinav@rafay.co"
-        "env" = "cs-team"
+        "env"   = "cs-team"
+      }
+      ssh {
+        allow           = true
+        enable_ssm      = true
+        public_key_name = "Abhinav-cluatercraft-dev"
       }
     }
     # node_groups {
