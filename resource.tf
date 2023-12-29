@@ -40,7 +40,7 @@ resource "rafay_eks_cluster" "ekscluster-advanced" {
       desired_capacity   = 1
       min_size           = 1
       max_size           = 2
-      max_pods_per_node  = 50
+      max_pods_per_node  = 60
       version            = "1.28"
       volume_size        = 80
       volume_type        = "gp3"
