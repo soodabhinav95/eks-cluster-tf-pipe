@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     rafay = {
-      version = ">= 1.1.14"
-      source  = "registry.terraform.io/RafaySystems/rafay"
+      source  = "RafaySystems/rafay"
+      version = "1.1.22"
     }
   }
 }
